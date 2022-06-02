@@ -9,6 +9,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Controller c = Get.put(Controller());
+    final Controller accessor = Get.find();
 
     return Scaffold(
       appBar: AppBar(
@@ -20,9 +21,16 @@ class HomePage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Text(
+                "Welcome: " '${accessor.name}',
+                style: const TextStyle(fontSize: 30),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
               const Text(
-                'Successfully Authenticated',
-                style: TextStyle(fontSize: 30),
+                'You are Successfully Authenticated',
+                style: TextStyle(fontSize: 22),
               ),
               const SizedBox(
                 height: 20,
